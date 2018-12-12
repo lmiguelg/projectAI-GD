@@ -151,6 +151,7 @@
     <Compile Include="Assets\TeamDEL\AI\HSM\Conditions\ReadyToPerformActionCondition.cs" />
     <Compile Include="Assets\TeamDEL\AI\IUnit.cs" />
     <Compile Include="Assets\TeamDEL\GoalOrientedBehaviour\Scripts\GameData\Actions\DropOffFlag.cs" />
+    <Compile Include="Assets\TeamDEL\GoalOrientedBehaviour\Scripts\GameData\Actions\MiddleAction.cs" />
     <Compile Include="Assets\TeamDEL\GoalOrientedBehaviour\Scripts\GameData\Actions\PickUpFlagAction.cs" />
     <Compile Include="Assets\TeamDEL\GoalOrientedBehaviour\Scripts\GameData\Actions\TacklePlayer.cs" />
     <Compile Include="Assets\TeamDEL\GoalOrientedBehaviour\Scripts\GameData\Actions\ThrowFlagAction.cs" />

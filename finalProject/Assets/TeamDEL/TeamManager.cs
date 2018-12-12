@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions;
 using General_Scripts.AI.GOAP;
 using General_Scripts.Labourers;
@@ -29,9 +30,10 @@ namespace Assets.TeamDEL
         {
             StartCoroutine(RequestNewPlan());
             StartCoroutine(AdaptActionsCosts());
+            StartCoroutine(CheckFlag());
         }
 
-        private IEnumerator RequestNewPlan()
+        public IEnumerator RequestNewPlan()
         {
             while (true)
             {
@@ -57,6 +59,17 @@ namespace Assets.TeamDEL
                     Console.WriteLine(runner.Goals);
                     yield return null;
                 }
+            }
+        }
+
+        private IEnumerator CheckFlag()
+        {
+            yield return null;
+            while (true)
+            {
+                WeHaveFlag = MyRunners.Any(runner => runner.Backpack.HasFlag);
+
+                yield return null;
             }
         }
     }
