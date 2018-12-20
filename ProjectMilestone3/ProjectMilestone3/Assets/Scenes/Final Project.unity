@@ -1873,6 +1873,7 @@ MonoBehaviour:
   Cost: 1
   Duration: 0
   _target: {fileID: 0}
+  _teamManager: {fileID: 1005298267}
 --- !u!1 &135268899
 GameObject:
   m_ObjectHideFlags: 0
@@ -8431,6 +8432,7 @@ MonoBehaviour:
   - {fileID: 131811356}
   - {fileID: 1636947653}
   - {fileID: 1217549554}
+  runnerCarrier: {fileID: 0}
 --- !u!1 &1008867962
 GameObject:
   m_ObjectHideFlags: 0
@@ -10836,6 +10838,7 @@ MonoBehaviour:
   Cost: 1
   Duration: 0
   _target: {fileID: 0}
+  _teamManager: {fileID: 1005298267}
 --- !u!1001 &1243670253
 Prefab:
   m_ObjectHideFlags: 0
@@ -14363,6 +14366,7 @@ MonoBehaviour:
   Cost: 1
   Duration: 0
   _target: {fileID: 0}
+  _teamManager: {fileID: 1005298267}
 --- !u!1 &1647305742
 GameObject:
   m_ObjectHideFlags: 0

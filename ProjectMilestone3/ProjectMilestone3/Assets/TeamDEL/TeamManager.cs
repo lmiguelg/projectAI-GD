@@ -15,6 +15,7 @@ namespace Assets.TeamDEL
 
         public List<GoapAgent> MyAgents;
         public List<Runner> MyRunners;
+        public Runner runnerCarrier;
 
         public void SetTeamNewGoal(string goal)
         {
@@ -30,6 +31,8 @@ namespace Assets.TeamDEL
             StartCoroutine(RequestNewPlan());
             StartCoroutine(AdaptActionsCosts());
             StartCoroutine(CheckFlag());
+            StartCoroutine(CheckRunnerCarrier());
+
         }
 
         private IEnumerator RequestNewPlan()
@@ -72,6 +75,20 @@ namespace Assets.TeamDEL
                 yield return null;
             }
         }
+        public IEnumerator CheckRunnerCarrier()
+        {
+            yield return null;
+            while (true)
+            {
+                runnerCarrier = MyRunners.Find(runner => runner.Backpack.HasFlag);
+                
+                    
+                print("corroutine runner carrirer: " + runnerCarrier);
+
+                yield return null;
+            }
+        }
+
 
         public void setTeamNewGoal(string goal, string name)
         {

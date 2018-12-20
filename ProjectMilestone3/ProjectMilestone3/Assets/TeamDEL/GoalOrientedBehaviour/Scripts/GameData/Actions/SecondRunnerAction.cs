@@ -15,9 +15,14 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
         private bool _isFollowingRunner;
 
+        public TeamManager _teamManager;
+
         private FlagComponent _flag;
 
-      
+        private Runner thisRunner;
+
+
+
 
         private Runner runnerCarrier;
 
@@ -30,13 +35,14 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             
 
             AddPrecondition("WeHaveFlag", true);
-            //AddPrecondition("hasFlag", false);
+            AddPrecondition("_isFollowingRunner", false);
+            AddEffect("_isFollowingRunner", true);
 
 
             // follow the runner tha has the flag
             _flag = FindObjectOfType<FlagComponent>();
-            runnerCarrier = GetComponent<Runner>();
-            
+            thisRunner = GetComponent<Runner>();
+
             
 
 
@@ -74,11 +80,18 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             // the flag will "be worked" if there is some1 carrying it. Otherwise it is free to be picked up.
             if (_flag.Carrier == null)
                 return false;
-            
-            
+            if (_teamManager.runnerCarrier == null)
+                return false;
+            Runner runnerFollower;
+            Utils.GetClosest(_teamManager.MyRunners, _teamManager.runnerCarrier.transform, out runnerFollower);
+            if (thisRunner.Equals(runnerFollower))//if this runner isnt the closest do nothing
+                return false;
 
-            Target = _flag.Carrier.gameObject;
+            Target = _teamManager.runnerCarrier.gameObject;
 
+
+
+            print("SECOND ACTION checkProceduralCondition");
             return true;
         }
 
@@ -102,9 +115,10 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             if (Target == null)
                 return false;
 
-            //if (_flag.CanBeWorked == false) return false;
-            //_flag.StartWorking(GetComponent<Labourer>());
+            if (_flag.CanBeWorked == false) return false;
+            _flag.StartWorking(GetComponent<Labourer>());
 
+            //_isFollowingRunner = true;
             //AnimManager.GoIdle();
 
             return true;
