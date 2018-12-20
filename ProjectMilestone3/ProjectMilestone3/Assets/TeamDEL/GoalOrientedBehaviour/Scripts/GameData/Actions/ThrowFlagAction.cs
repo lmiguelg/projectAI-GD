@@ -88,7 +88,7 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             Vector3 vClosestRunner = (_closestRunner.transform.position - agent.transform.position).normalized;
 
             var backpack = agent.GetComponent<BackpackComponent>();
-            backpack.Flag.ThrowFlag(vClosestRunner);
+            backpack.Flag.ThrowFlag(agent.transform.forward + agent.transform.up);//vClosestRunner
             backpack.Flag = null;
             backpack.HasFlag = false;
             _dropFlag = true; // you have dropped the flag

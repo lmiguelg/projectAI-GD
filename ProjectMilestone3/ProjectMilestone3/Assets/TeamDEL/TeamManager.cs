@@ -72,5 +72,12 @@ namespace Assets.TeamDEL
                 yield return null;
             }
         }
+
+        public void setTeamNewGoal(string goal, string name)
+        {
+            var run = MyRunners.First(runner => runner.name == name);
+            run.Goals.Clear();
+            run.Goals.Add(goal);
+        }
     }
 }
