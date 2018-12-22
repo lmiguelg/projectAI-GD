@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionName: 0
-  Cost: 3
+  Cost: 5
   Duration: 0
   _target: {fileID: 0}
   _runner: {fileID: 0}
@@ -6548,6 +6548,8 @@ GameObject:
   - component: {fileID: 772160845}
   - component: {fileID: 772160849}
   - component: {fileID: 772160848}
+  - component: {fileID: 772160850}
+  - component: {fileID: 772160858}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Untagged
@@ -6625,6 +6627,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionName: 1
+  Cost: 1
+  Duration: 0
+  _target: {fileID: 0}
+--- !u!114 &772160850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772160844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32a65fb1163ac49811858cb20dba12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionName: 0
   Cost: 1
   Duration: 0
   _target: {fileID: 0}
@@ -6737,6 +6754,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &772160858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772160844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3dda11291eafcb41a7bc11891544f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionName: 0
+  Cost: 1
+  Duration: 0
+  _target: {fileID: 0}
+  _teamManager: {fileID: 2130179472}
 --- !u!1 &774406368
 GameObject:
   m_ObjectHideFlags: 0
@@ -9205,6 +9238,8 @@ GameObject:
   - component: {fileID: 1104179984}
   - component: {fileID: 1104179983}
   - component: {fileID: 1104179982}
+  - component: {fileID: 1104179994}
+  - component: {fileID: 1104179995}
   m_Layer: 0
   m_Name: Runner (2)
   m_TagString: Untagged
@@ -9410,6 +9445,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1104179994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104179980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32a65fb1163ac49811858cb20dba12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionName: 0
+  Cost: 1
+  Duration: 0
+  _target: {fileID: 0}
+--- !u!114 &1104179995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104179980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3dda11291eafcb41a7bc11891544f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionName: 0
+  Cost: 1
+  Duration: 0
+  _target: {fileID: 0}
+  _teamManager: {fileID: 2130179472}
 --- !u!1 &1109380593
 GameObject:
   m_ObjectHideFlags: 0
@@ -10818,7 +10884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionName: 0
-  Cost: 3
+  Cost: 5
   Duration: 0
   _target: {fileID: 0}
   _runner: {fileID: 0}
@@ -14346,7 +14412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionName: 0
-  Cost: 3
+  Cost: 5
   Duration: 0
   _target: {fileID: 0}
   _runner: {fileID: 0}
@@ -17221,6 +17287,8 @@ GameObject:
   - component: {fileID: 1940167108}
   - component: {fileID: 1940167107}
   - component: {fileID: 1940167106}
+  - component: {fileID: 1940167118}
+  - component: {fileID: 1940167119}
   m_Layer: 0
   m_Name: Runner (1)
   m_TagString: Untagged
@@ -17426,6 +17494,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1940167118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940167104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32a65fb1163ac49811858cb20dba12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionName: 0
+  Cost: 1
+  Duration: 0
+  _target: {fileID: 0}
+--- !u!114 &1940167119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940167104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3dda11291eafcb41a7bc11891544f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionName: 0
+  Cost: 1
+  Duration: 0
+  _target: {fileID: 0}
+  _teamManager: {fileID: 2130179472}
 --- !u!1 &1946714378
 GameObject:
   m_ObjectHideFlags: 0
@@ -18999,6 +19098,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2130179471}
+  - component: {fileID: 2130179472}
   m_Layer: 0
   m_Name: TeamA
   m_TagString: Untagged
@@ -19024,6 +19124,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130179472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130179470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36abe970e2a5964b90fb5dd26a4cc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeHaveFlag: 0
+  MyAgents:
+  - {fileID: 772160851}
+  - {fileID: 1940167111}
+  - {fileID: 1104179987}
+  MyRunners:
+  - {fileID: 772160852}
+  - {fileID: 1940167112}
+  - {fileID: 1104179988}
 --- !u!1 &2131706616
 GameObject:
   m_ObjectHideFlags: 0

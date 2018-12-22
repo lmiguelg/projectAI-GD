@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GameData\Actions\DropOffFlag.cs" />
     <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GameData\Actions\PickUpFlagAction.cs" />
+    <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GameData\Actions\TacklePlayer.cs" />
+    <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GameData\Actions\ThrowFlagAction.cs" />
     <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GameData\MyRandom.cs" />
     <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GameData\Utils.cs" />
     <Compile Include="Assets\DefaultTeam\GoalOrientedBehaviour\Scripts\GUI\MessageManager.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\DefaultTeam\Pathfinding\Scripts\Pathfinding\Patrol.cs" />
     <Compile Include="Assets\DefaultTeam\Pathfinding\Scripts\Pathfinding\TerrainType.cs" />
     <Compile Include="Assets\DefaultTeam\Pathfinding\Scripts\Pathfinding\Unit.cs" />
+    <Compile Include="Assets\DefaultTeam\TeamManager.cs" />
     <Compile Include="Assets\General Scripts\AI\GOAP\GoapAction.cs" />
     <Compile Include="Assets\General Scripts\AI\GOAP\GoapAgent.cs" />
     <Compile Include="Assets\General Scripts\AI\GOAP\GoapPlanner.cs" />

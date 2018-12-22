@@ -28,15 +28,39 @@ namespace Assets.TeamDEL
 
         private void Awake()
         {
+
+
+           
             StartCoroutine(RequestNewPlan());
             StartCoroutine(AdaptActionsCosts());
             StartCoroutine(CheckFlag());
             StartCoroutine(CheckRunnerCarrier());
+            //StartCoroutine(teste());
 
         }
 
+        private IEnumerator teste()
+        {
+            yield return null;
+            while (true)
+
+            foreach (var runner in MyRunners)
+            {
+                if (runner.Equals(runnerCarrier))
+                {
+                    SetTeamNewGoal("attacar");
+                    yield return null;
+                }
+
+                print("goals" + runner.Goals);
+            }
+
+        }
+
+
         private IEnumerator RequestNewPlan()
         {
+
             while (true)
             {
                 yield return new WaitForSeconds(1);
