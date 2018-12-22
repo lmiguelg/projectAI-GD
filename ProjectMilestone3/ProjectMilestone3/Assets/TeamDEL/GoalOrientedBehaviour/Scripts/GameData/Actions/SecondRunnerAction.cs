@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,8 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
         private Runner thisRunner;
 
+        private Runner runnerFollower;
+
 
 
 
@@ -36,7 +39,7 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
             AddPrecondition("WeHaveFlag", true);
             AddPrecondition("_isFollowingRunner", false);
-            AddEffect("_isFollowingRunner", true);
+            //AddEffect("_isFollowingRunner", true);
 
 
             // follow the runner tha has the flag
@@ -77,21 +80,23 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
         /// <returns></returns>
         public override bool CheckProceduralPrecondition(GameObject agent)
         {
+            print("SECOND ACTION checkProceduralCondition");
             // the flag will "be worked" if there is some1 carrying it. Otherwise it is free to be picked up.
             if (_flag.Carrier == null)
                 return false;
             if (_teamManager.runnerCarrier == null)
                 return false;
-            Runner runnerFollower;
+            
             Utils.GetClosest(_teamManager.MyRunners, _teamManager.runnerCarrier.transform, out runnerFollower);
             if (thisRunner.Equals(runnerFollower))//if this runner isnt the closest do nothing
                 return false;
-
+            var action = runnerFollower.GetComponent<SecondRunnerAction>();
+            runnerFollower.MoveAgent(action);
             Target = _teamManager.runnerCarrier.gameObject;
 
 
 
-            print("SECOND ACTION checkProceduralCondition");
+            print("SECOND ACTION checkProceduralCondition SAIU");
             return true;
         }
 
@@ -120,11 +125,11 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
             //_isFollowingRunner = true;
             //AnimManager.GoIdle();
+            StartCoroutine(_teamManager.CheckRunnerCarrier());
 
             return true;
         }
+
        
-
-
     }
 }

@@ -107,7 +107,7 @@ namespace Assets.TeamDEL
                 runnerCarrier = MyRunners.Find(runner => runner.Backpack.HasFlag);
                 
                     
-                print("corroutine runner carrirer: " + runnerCarrier);
+                //print("corroutine runner carrirer: " + runnerCarrier);
 
                 yield return null;
             }

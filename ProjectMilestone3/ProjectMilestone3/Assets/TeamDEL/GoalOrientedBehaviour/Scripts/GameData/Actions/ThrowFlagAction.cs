@@ -89,7 +89,7 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
             var backpack = agent.GetComponent<BackpackComponent>();
 
-            backpack.Flag.ThrowFlag(agent.transform.forward + agent.transform.up);//vClosestRunner
+            backpack.Flag.ThrowFlag(vClosestRunner);//agent.transform.forward + agent.transform.up
 
             backpack.Flag = null;
             backpack.HasFlag = false;
