@@ -16,6 +16,8 @@ namespace Assets.TeamDEL
         public List<GoapAgent> MyAgents;
         public List<Runner> MyRunners;
         public Runner runnerCarrier;
+        private List<Vector3> strategicPositions = new List<Vector3>();
+        public Vector3 closestPosition;
 
         public void SetTeamNewGoal(string goal)
         {
@@ -37,6 +39,35 @@ namespace Assets.TeamDEL
             StartCoroutine(CheckRunnerCarrier());
             //StartCoroutine(teste());
 
+            //posições estratégicas----------------------------
+            Vector3 position1 = new Vector3(20f, 0f, 0f);
+            Vector3 position2 = new Vector3(-20f, 0f, 0f);
+            Vector3 position3 = new Vector3(0f, 0f, -20f);
+            Vector3 position4 = new Vector3(0f, 0f, 20f);
+            Vector3 center = new Vector3( 0f, 0f, 0f);
+            strategicPositions.Add(center);
+            strategicPositions.Add(position1);
+            strategicPositions.Add(position2);
+            strategicPositions.Add(position3);
+            strategicPositions.Add(position4);
+
+            
+
+
+
+        }
+
+        public Vector3 GetClosestStrategicPosition(Runner runner)
+        {
+            closestPosition = strategicPositions[0];
+            foreach (var position in strategicPositions)
+            {
+                if (Vector3.Distance(runner.transform.position,position) < Vector3.Distance(runner.transform.position,closestPosition))
+                {
+                    closestPosition = position;
+                }
+            }
+            return closestPosition;
         }
 
         private IEnumerator teste()

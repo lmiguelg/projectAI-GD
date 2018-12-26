@@ -70,7 +70,7 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
             
             Target = new GameObject();
-            Target.transform.position = Vector3.up;
+            
 
             //this runner
             Runner thisRunner = GetComponent<Runner>();
@@ -82,6 +82,11 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             //aplicar apenas ao runner mais proximo do centro
             if (!thisRunner.Equals(_runner))
                 return false;
+
+            Target.transform.position = _teamManager.GetClosestStrategicPosition(_runner);
+
+
+
             //print("middleaction CheckProceduralPrecondition equals runner");
             //print("closest Runner: " + _runner);
             //print("this Runner: " + thisRunner);

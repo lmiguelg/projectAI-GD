@@ -84,15 +84,15 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             // the flag will "be worked" if there is some1 carrying it. Otherwise it is free to be picked up.
             if (_flag.Carrier == null)
                 return false;
-            if (_teamManager.runnerCarrier == null)
-                return false;
+            //if (_teamManager.runnerCarrier == null)
+            //    return false;
             
-            Utils.GetClosest(_teamManager.MyRunners, _teamManager.runnerCarrier.transform, out runnerFollower);
+            Utils.GetClosest(_teamManager.MyRunners, _flag.Carrier.transform, out runnerFollower);
             if (thisRunner.Equals(runnerFollower))//if this runner isnt the closest do nothing
                 return false;
-            var action = runnerFollower.GetComponent<SecondRunnerAction>();
-            runnerFollower.MoveAgent(action);
-            Target = _teamManager.runnerCarrier.gameObject;
+            //var action = runnerFollower.GetComponent<SecondRunnerAction>();
+            //runnerFollower.MoveAgent(action);
+            Target = _flag.Carrier.gameObject;
 
 
 
@@ -115,17 +115,12 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
             // still working
             if (StillWorking())
-                return true;
+                return false;
 
             if (Target == null)
                 return false;
 
-            if (_flag.CanBeWorked == false) return false;
-            _flag.StartWorking(GetComponent<Labourer>());
-
-            //_isFollowingRunner = true;
-            //AnimManager.GoIdle();
-            StartCoroutine(_teamManager.CheckRunnerCarrier());
+            
 
             return true;
         }
