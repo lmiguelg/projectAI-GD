@@ -46,8 +46,8 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             //var teamManager = GetComponent<TeamManager>();
             //teamManager.SetTeamNewGoal(_runner.Goals[1]);
             //_teamManager.RequestNewPlan();
-           
 
+            
         }
 
         public override void Reset()

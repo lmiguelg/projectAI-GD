@@ -8466,6 +8466,9 @@ MonoBehaviour:
   - {fileID: 1636947653}
   - {fileID: 1217549554}
   runnerCarrier: {fileID: 0}
+  closestPosition: {x: 0, y: 0, z: 0}
+  flagPosition: {x: 0, y: 0, z: 0}
+  _flag: {fileID: 22000484}
 --- !u!1 &1008867962
 GameObject:
   m_ObjectHideFlags: 0

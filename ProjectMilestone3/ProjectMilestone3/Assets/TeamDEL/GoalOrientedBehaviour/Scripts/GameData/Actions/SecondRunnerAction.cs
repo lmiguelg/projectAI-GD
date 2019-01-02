@@ -36,7 +36,6 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             base.Awake();
 
             
-
             AddPrecondition("WeHaveFlag", true);
             AddPrecondition("_isFollowingRunner", false);
             //AddEffect("_isFollowingRunner", true);
@@ -122,7 +121,7 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
 
             
 
-            return true;
+            return false;
         }
 
        
