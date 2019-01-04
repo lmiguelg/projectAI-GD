@@ -87,9 +87,21 @@ namespace Assets.TeamDEL.GoalOrientedBehaviour.Scripts.GameData.Actions
             //get teammate direction
             Vector3 vClosestRunner = (_closestRunner.transform.position - agent.transform.position).normalized;
 
+            float dist = Vector3.Distance(_closestRunner.transform.position,agent.transform.position);
             var backpack = agent.GetComponent<BackpackComponent>();
+            backpack.Flag.ThrowFlag(vClosestRunner);
+            //if (dist <= 6)
+            //{
 
-            backpack.Flag.ThrowFlag(vClosestRunner);//agent.transform.forward + agent.transform.up
+            //    backpack.Flag.ThrowFlag(vClosestRunner);//agent.transform.forward + agent.transform.up
+            //}
+            //else
+            //{
+            //    backpack.Flag.ThrowFlag(agent.transform.forward + agent.transform.up);//
+            //}
+
+
+
 
             backpack.Flag = null;
             backpack.HasFlag = false;
